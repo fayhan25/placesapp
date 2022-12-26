@@ -8,7 +8,7 @@
     "start": "nodemon app.js"
   },
   "nodemonConfig": {
-    "ignore": ["public/data/*.json", "public/javascripts/*.js"]
+    "ignore": ["nodemon.json"]
   },
   "author": "",
   "license": "ISC",
