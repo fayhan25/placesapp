@@ -1,0 +1,7 @@
+{
+  "env":  {
+        "DB_USER" : "halim",
+        "DB_PASSWORD" : "12345",
+        "DB_NAME" : "test"
+    }
+}
