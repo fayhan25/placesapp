@@ -124,7 +124,7 @@ const login = async (req,res,next) => {
     }
 
 
-    res.json({userId: checkLogin.userId, email: checkLogin.email, token:token});
+    res.json({userId: checkLogin.id, email: checkLogin.email, token:token});
 }
 
 exports.getAllUsers = getAllUsers;

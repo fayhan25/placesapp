@@ -54,9 +54,12 @@ const getPlaceByUserId = async (req, res, next) => {
     );
   }
 
-  res.json({ places: userWithPlaces.places.map(place => place.toObject({ getters: true })) });
+  res.json({
+    places: userWithPlaces.places.map(place =>
+      place.toObject({ getters: true })
+    )
+  });
 };
-
   const createPlace = async (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -76,13 +79,13 @@ const getPlaceByUserId = async (req, res, next) => {
       address,
       coordinates : location,
       image : req.file.path.replace("\\", "/"),
-      creatorId
+      creatorId: req.userData.userId
     });
   
     let user;
 
     try{
-      user = await User.findById(creatorId);
+      user = await User.findById(req.userData.userId);
     }
     catch(err){
       return next(new HttpError("Could not find place with that userID",500));

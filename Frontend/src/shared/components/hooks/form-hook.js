@@ -16,7 +16,6 @@ const formReducer = (state, action) => {
             formIsValid = formIsValid && state.inputs[inputId].isValid;
           }
         }
-        console.log(state);
         return {
           ...state,
           inputs: {
@@ -57,6 +56,5 @@ export const useForm = (initialInputs,initialValidity) => {
           formIsValid:changedValidity
         });
       },[]);
-      console.log();
       return [formState,inputHandler,setFormData];
 };

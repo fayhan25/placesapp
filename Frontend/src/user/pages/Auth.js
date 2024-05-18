@@ -60,7 +60,6 @@ const Auth = () => {
   
     const authSubmitHandler = async event => {
       event.preventDefault();
-      console.log(formState.inputs);
       if (isLoginMode){
         try{
           const responseData = await sendRequest(process.env.REACT_APP_BACKEND_URL + '/users/login',
@@ -71,7 +70,7 @@ const Auth = () => {
           }),
           {'Content-Type' : 'application/json'}
         );
-          auth.login(responseData.userId, responseData.token);  
+          auth.login(responseData.userId, responseData.token); 
         }
         
         catch(err){}  
